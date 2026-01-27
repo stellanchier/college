@@ -28,7 +28,7 @@ T input_predicate(std::string const &prompt, Callable predicate)
 
 int main()
 {
-	auto number = input_predicate<int>("Enter a two-digit positive integer: ", [](int const i) -> bool {
+	auto number = input_predicate<int>("Enter a two-digit positive integer: ", [](auto const i) -> bool {
 		return i >= 10 && i <= 99;
 	});
 
