@@ -4,7 +4,7 @@
 
 int main()
 {
-	int number = 0;
+	int number {};
 
 	while (true)
 	{

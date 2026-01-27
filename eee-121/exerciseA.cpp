@@ -3,7 +3,7 @@
 
 int main()
 {
-	int number = 0;
+	int number {};
 	std::cout << "Enter a single-digit number: ";
 	std::cin >> number;
 
