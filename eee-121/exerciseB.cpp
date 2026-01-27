@@ -1,18 +1,17 @@
 #include <ios>
 #include <iostream>
 #include <limits>
-#include <string>
 
-template<typename T, typename Callable>
-T input_predicate(std::string const &prompt, Callable predicate)
+int main()
 {
-	T input {};
+	int number = 0;
+
 	while (true)
 	{
-		std::cout << prompt;
-		std::cin >> input;
+		std::cout << "Enter a two-digit positive number: ";
+		std::cin >> number;
 
-		if (std::cin.fail() || !predicate(input))
+		if (std::cin.fail() || number < 10 || number > 99)
 		{
 			std::cout << "Invalid input.\n";
 			std::cin.clear();
@@ -22,15 +21,6 @@ T input_predicate(std::string const &prompt, Callable predicate)
 
 		break;
 	}
-
-	return input;
-}
-
-int main()
-{
-	auto number = input_predicate<int>("Enter a two-digit positive integer: ", [](auto const i) -> bool {
-		return i >= 10 && i <= 99;
-	});
 
 	for (int i = 9; i < number; i += 9)
 	{
