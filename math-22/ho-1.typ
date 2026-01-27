@@ -51,6 +51,6 @@ $ integral (sec^6(ln x))/x dd(x)
 	=& integral (1 + v^2)^2 dd(v) \
 	=& integral (1 + 2v^2 + v^4) dd(v) \
 	=& integral dd(v) + 2 integral v^2 dd(v) + integral v^4 dd(v) \
-	=& v + 2/3 v^3 + v^5/5 \
+	=& v + 2/3 v^3 + 1/5 v^5 \
 	=& tan u + 2/3 tan^3 u + 1/5 tan^5 u \
 	=& markhl(tan(ln x) + 2/3 tan^3(ln x) + 1/5 tan^5(ln x) + C) $
