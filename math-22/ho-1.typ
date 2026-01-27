@@ -19,13 +19,13 @@ $ integral (x + 1) ln x dd(x)
 	=& ln x (x^2/2 + x) - integral (x^2/2 + x) 1/x dd(x) \
 	=& ln x (x^2/2 + x) - integral (1/2 x + 1) dd(x) \
 	=& ln x (x^2/2 + x) - 1/2 integral x dd(x) + integral dd(x) \
-	=& ln x (x^2/2 + x) - 1/2 (x^2/2) + x \
-	=& ln x (x^2/2 + x) - x^2/4 + x $
+	=& ln x (x^2/2 + x) - 1/2 (x^2/2) - x \
+	=& ln x (x^2/2 + x) - x^2/4 - x $
 
 Solve for the definite integral.
 
 $ integral_1^2 (x + 1) ln x dd(x)
-	=& [ln x (x^2/2) + x - x^2/4 - x]_1^2 \
+	=& [ln x (x^2/2 + x) - x^2/4 - x]_1^2 \
 	=& [ln 2 (4/2 + 2) - 4/4 - 2] - [ln 1 (1/2 + 1) - 1/4 - 1] \
 	=& (4 ln 2 - 3) - (-1/4 - 4/4) \
 	=& 4 ln 2 - 12/4 + 5/4 \
