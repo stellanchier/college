@@ -9,13 +9,13 @@ int main()
 
 	if (std::cin.fail())
 	{
-		std::cout << "Your input is not a number.";
+		std::cout << "Your input is not a number.\n";
 		return EXIT_FAILURE;
 	}
 
 	if (number < -9 || number > 9)
 	{
-		std::cout << "Your number is not a single digit.";
+		std::cout << "Your number is not a single digit.\n";
 		return EXIT_FAILURE;
 	}
 
