@@ -19,7 +19,7 @@ int main()
 	char word[16] = "";
 
 	std::cout << "Enter a word (15 characters max): ";
-	std::cin >> std::setw(15) >> word;
+	std::cin >> std::setw(16) >> word;
 
 	std::cout << "Your word: " << word << '\n';
 	reverse_string(word);
