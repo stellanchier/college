@@ -3,11 +3,14 @@
 !/.gitignore
 
 !/eee-121/
-!/eee-121/exerciseA.cpp
-!/eee-121/exerciseB.cpp
-!/eee-121/exerciseC.cpp
-!/eee-121/hello.cpp
-!/eee-121/types.cpp
+!/eee-121/meeting-1/
+!/eee-121/meeting-1/hello.cpp
+!/eee-121/meeting-1/types.cpp
+!/eee-121/meeting-2/
+!/eee-121/meeting-2/exerciseA.cpp
+!/eee-121/meeting-2/exerciseB.cpp
+!/eee-121/meeting-2/exerciseC.cpp
+!/eee-121/meeting-3/
 
 !/math-22/
 !/math-22/ho-1.typ
