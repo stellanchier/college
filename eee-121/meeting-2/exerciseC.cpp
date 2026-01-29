@@ -1,6 +1,6 @@
 #include <iostream>
 
-int sum_proper_divisors(int n)
+int sum_proper_divisors(int const n)
 {
 	int sum = 0;
 
@@ -15,7 +15,7 @@ int sum_proper_divisors(int n)
 	return sum;
 }
 
-bool is_perfect_number(int n)
+bool is_perfect_number(int const n)
 {
 	if (n <= 0)
 	{
