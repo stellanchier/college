@@ -24,28 +24,28 @@ Plots of the inputs and outputs of the four diode circuits are shown in
 @a1.1.c1, @a1.1.c2, @a1.1.c3 and @a1.1.c4.
 
 #figure(
-	image("spice/plot-1.1.1.png"),
+	image("ltspice/plot-1.1.1.png"),
 	caption: [
 		Plot of the input and output for Circuit 1.
 	]
 ) <a1.1.c1>
 
 #figure(
-	image("spice/plot-1.1.2.png"),
+	image("ltspice/plot-1.1.2.png"),
 	caption: [
 		Plot of the input and output for Circuit 2.
 	]
 ) <a1.1.c2>
 
 #figure(
-	image("spice/plot-1.1.3.png"),
+	image("ltspice/plot-1.1.3.png"),
 	caption: [
 		Plot of the input and output for Circuit 3.
 	]
 ) <a1.1.c3>
 
 #figure(
-	image("spice/plot-1.1.4.png"),
+	image("ltspice/plot-1.1.4.png"),
 	caption: [
 		Plot of the input and output for Circuit 4.
 	]
@@ -77,7 +77,7 @@ frequency as shown in @a1.3.rceq.
 $ f_c = 1/(2 pi R C) <=> C = 1/(2 pi R f_c) approx #qty(60, "nF") $ <a1.3.rceq>
 
 #figure(
-	image("spice/plot-1.3.rc.png"),
+	image("ltspice/plot-1.3.rc.png"),
 	caption: [
 		Plot of the input and output of the RC circuit, with
 		capacitance stepped from #qty(10, "nF") to #qty(100, "nF") in
@@ -91,7 +91,7 @@ This is also confirmed by the bode plot in @a1.3.rcb, which shows the
 attenuation of amplitude for frequencies lower than #qty(2.65, "kHz").
 
 #figure(
-	image("spice/plot-1.3.rcb.png"),
+	image("ltspice/plot-1.3.rcb.png"),
 	caption: [
 		Bode plot of the output voltage of the RC circuit. $R = #qty(1, "kO")$
 		and $C = #qty(60, "nF")$.
@@ -107,7 +107,7 @@ result can be found using the equation for cutoff frequency as shown in
 $ f_c = R/(2 pi L) <=> L = R/(2 pi f_c) approx #qty(70, "mH") $ <a1.3.rleq>
 
 #figure(
-	image("spice/plot-1.3.rl.png"),
+	image("ltspice/plot-1.3.rl.png"),
 	caption: [
 		Plot of the input and output of the RL circuit, with
 		inductance stepped from #qty(10, "mH") to #qty(100, "mH") in
@@ -121,7 +121,7 @@ This is also confirmed by the bode plot in @a1.3.rlb, which shows the
 attenuation of amplitude for frequencies above #qty(227, "Hz").
 
 #figure(
-	image("spice/plot-1.3.rlb.png"),
+	image("ltspice/plot-1.3.rlb.png"),
 	caption: [
 		Bode plot of the output voltage of the RC circuit. $R = #qty(100, "O")$
 		and $L = #qty(70, "mH")$.
