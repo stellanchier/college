@@ -2,19 +2,27 @@
 
 !/.gitignore
 
+
+
 !/eee-121/
+
 !/eee-121/meeting-1/
 !/eee-121/meeting-1/hello.cpp
 !/eee-121/meeting-1/types.cpp
+
 !/eee-121/meeting-2/
 !/eee-121/meeting-2/exerciseA.cpp
 !/eee-121/meeting-2/exerciseB.cpp
 !/eee-121/meeting-2/exerciseC.cpp
+
 !/eee-121/meeting-3/
 !/eee-121/meeting-3/exerciseA.cpp
 !/eee-121/meeting-3/exerciseB.cpp
 
+
+
 !/eee-148/
+
 !/eee-148/lab-1/
 !/eee-148/lab-1/ltspice/
 !/eee-148/lab-1/ltspice/activity-1.asc
@@ -27,6 +35,11 @@
 !/eee-148/lab-1/ltspice/plot-1.3.rl.png
 !/eee-148/lab-1/ltspice/plot-1.3.rlb.png
 !/eee-148/lab-1/main.typ
+
+!/eee-148/lab-2/
+!/eee-148/lab-2/main.typ
+
+
 
 !/math-22/
 !/math-22/ho-1.typ
