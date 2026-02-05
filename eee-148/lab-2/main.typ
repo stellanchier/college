@@ -53,12 +53,12 @@ low-pass filter.
 
 == (3)
 The output settles at around #qty(6, "V")DC when a #qty(6, "V")DC input is
-applied. The capacitors function as open circuits does to their extremely high
-impedance at DC. As a result, the circuit reduces into a resistive unity-gain
+applied. The capacitors function as open circuits due to their extremely high
+impedance on DC. As a result, the circuit reduces into a resistive unity-gain
 op-amp configuration, causing the DC gain to be equal to one, as shown in
 @f:glpf.
 
-$ G = 20log(V_"out"/V_"in") = 20log(#qty(6, "V")/#qty(6, "V")) = 0 $ <f:glpf>
+$ G = 20log(V_"out"/V_"in") = 20log(#qty(6, "V")/#qty(6, "V")) = #qty(0, "dB") $ <f:glpf>
 
 == (5)
 @t:oglpf shows the output and gain of the low-pass filter on an #qty(8, "V")pp
