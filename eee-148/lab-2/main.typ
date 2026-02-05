@@ -66,7 +66,7 @@ sine wave with varying frequencies. Note that the output sine wave of the
 circuit started showing 'spikes' at around #qty(1.5, "kHz"). At
 #qty(10, "kHz"), the spiking became so prominent that it started being measured
 as the peak of the wave, causing the $V_"out,pp"$ for that frequency to be
-higher than the previous one.
+higher than the $V_"out,pp"$ for #qty(8, "kHz").
 
 #figure(
 	table(
