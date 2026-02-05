@@ -3,7 +3,7 @@
 
 #set text(font: "New Computer Modern")
 
-= Math 22 HO1
+= Math 22 HO2
 
 2026-01-30
 
