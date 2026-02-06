@@ -3,24 +3,30 @@
 
 #show: ieee.with(
 	title: "EEE 148 Lab Report 2",
-	abstract: none,
+	abstract: [
+		This report characterizes the performance of Sallen-Key topology in
+		both low-pass and narrowband (band-pass) filter configurations. By
+		analyzing magnitude responses through both simulation and hardware
+		implementation, the filters' gain and cutoff frequencies were
+		determined.
+	],
 	authors: (
+	(
+		name: "Carl Angelo P. Gil",
+		department: [Electrical and Electronics Engineering Institute],
+		organization: [University of the Philippines Diliman],
+		location: [Quezon City, Philippines],
+		email: "carl.angelo.gil@eee.upd.edu.ph"
+	),
 	(
 		name: "Nile Xavier O. Jocson",
 		department: [Electrical and Electronics Engineering Institute],
 		organization: [University of the Philippines Diliman],
 		location: [Quezon City, Philippines],
 		email: "nile.xavier.jocson@eee.upd.edu.ph"
+	)
 	),
-	(
-		name: "Carl Angelo P. Gil",
-		department: [Electrical and Electronics Engineering Institute],
-		organization: [University of the Philippines Diliman],
-		location: [Quezon City, Philippines],
-		email: "cal.angelo.gil@eee.upd.edu.ph"
-	),
-	),
-	index-terms: (),
+	index-terms: ("Sallen-Key", "low-pass", "narrowband", "frequency response"),
 	bibliography: none,
 	figure-supplement: "Fig.",
 )
@@ -31,6 +37,16 @@
 	stroke: (x, y) => if y <= 1 { (top: 0.5pt) },
 	fill: (x, y) => if y > 0 and calc.rem(y, 2) == 0  { rgb("#efefef") },
 )
+
+= Introduction
+
+The Sallen-Key Topology is one of the most widely used active filter designs
+due to its ability to generate a second-order response with a single
+operational amplifier. By using a specific combination of resistors and
+capacitors around an op-amp, the circuit can be configured as a low-pass filter
+to allow DC and low frequencies while blocking higher ones, or as a high-pass
+filter to achieve the opposite effect. To characterize these filters, gain in
+decibels is calculated and plotted on a semi-logarithmic scale.
 
 = Low-Pass Filter
 == (1)
