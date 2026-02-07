@@ -1,5 +1,7 @@
 #import "@preview/charged-ieee:0.1.4": ieee
+
 #import "@preview/unify:0.7.1": num, qty
+#import "@preview/zap:0.5.0"
 
 #show: ieee.with(
 	title: "EEE 148 Lab Report 2",
@@ -13,16 +15,16 @@
 	authors: (
 	(
 		name: "Carl Angelo P. Gil",
-		department: [Electrical and Electronics Engineering Institute],
-		organization: [University of the Philippines Diliman],
-		location: [Quezon City, Philippines],
+		department: "Electrical and Electronics Engineering Institute",
+		organization: "University of the Philippines Diliman",
+		location: "Quezon City, Philippines",
 		email: "carl.angelo.gil@eee.upd.edu.ph"
 	),
 	(
 		name: "Nile Xavier O. Jocson",
-		department: [Electrical and Electronics Engineering Institute],
-		organization: [University of the Philippines Diliman],
-		location: [Quezon City, Philippines],
+		department: "Electrical and Electronics Engineering Institute",
+		organization: "University of the Philippines Diliman",
+		location: "Quezon City, Philippines",
 		email: "nile.xavier.jocson@eee.upd.edu.ph"
 	)
 	),
@@ -51,8 +53,58 @@ decibels is calculated and plotted on a semi-logarithmic scale.
 
 
 
+= Methodology
+== Materials
+@t:mats shows the materials and their quantities used for the lab activity.
+
+#figure(
+	table(
+		columns: 4,
+		stroke: (x, y) => {
+			if y <= 1 { (top: 0.5pt) }
+			if x == 1 { (right: 0.5pt) }
+		},
+		table.header[Item][Quantity][Item][Quantity],
+		"Power Supply"                        , num(1),
+		"Signal Generator"                    , num(1),
+		"Oscilloscope"                        , num(1),
+		"Multimeter"                          , num(1),
+		"Breadboard"                          , num(1),
+		"Jumper Wires"                        , "as needed",
+		"LM741 Op-Amp"                        , num(1),
+		[#qty(10, "nF") Capacitor], num(1),
+		[#qty(20, "nF") Capacitor], num(1),
+		[#qty(33, "nF") Capacitor], num(2),
+		[#qty(7.5, "kO") Resistor], num(4),
+		[#qty(33, "kO") Resistor] , num(2),
+		[#qty(270, "O") Resistor] , num(1),
+		[#qty(510, "O") Resistor] , num(1)
+	),
+	caption: "List of Materials"
+) <t:mats>
+
+== Low-Pass Filter
+The low-pass filter was built on a breadboard using the specifications shown in
+@i:lpf.
+
+#figure(
+	image("assets/lpf.png"),
+	caption: "Specifications of the Sallen-Key low-pass filter."
+) <i:lpf>
+
+== Narrowband Filter
+The narrowband filter was also built on a breadboard using the specifications
+shown in @i:nbf.
+
+#figure(
+	image("assets/nbf.png"),
+	caption: "Specifications of the Sallen-Key narrowband filter."
+) <i:nbf>
+
+
+
 = Sallen-Key Low-Pass Filter
-== (1)
+== Actual Values of the Components (1)
 @t:avlpf shows the actual values of the components used for the Sallen-Key
 low-pass filter.
 
@@ -70,16 +122,16 @@ low-pass filter.
 	caption: "Actual Values of the Low-Pass Filter Components"
 ) <t:avlpf>
 
-== (3)
+== Output and Gain at DC (3)
 The output settles at around #qty(6, "V")DC when a #qty(6, "V")DC input is
 applied. The capacitors function as open circuits due to their extremely high
-impedance on DC. As a result, the circuit reduces into a resistive unity-gain
+impedance at DC. As a result, the circuit reduces into a resistive unity-gain
 op-amp configuration, causing the DC gain to be equal to one, as shown in
 @f:glpf.
 
 $ G = 20log(V_"out"/V_"in") = #qty(0, "dB") $ <f:glpf>
 
-== (5)
+== Output and Gain at AC (5)
 @t:oglpf shows the output and gain of the low-pass filter on an #qty(8, "V")pp
 sine wave with varying frequencies. Note that the output sine wave of the
 circuit started showing 'spikes' at around #qty(1.5, "kHz"). At
@@ -107,24 +159,29 @@ higher than the $V_"out,pp"$ for #qty(8, "kHz").
 	caption: "Output and Gain of the Low-Pass Filter Circuit"
 ) <t:oglpf>
 
-== (6)
+== Cutoff Frequency (6)
 The signal amplitude dropped to $#qty(8, "V")/sqrt(2) approx #qty(5.656, "V")$
 at around #qty(1.28, "kHz"), making this the cutoff frequency for this particular
-circuit.
+circuit. The oscilloscope plot of the low-pass filter is shown in @i:cflpf.
 
-== (7)
+#figure(
+	image("assets/cutoff.png"),
+	caption: "Oscilloscope plot of the low-pass filter at its cutoff frequency. The configuration of the signal generator is also shown."
+) <i:cflpf>
+
+== Actual vs. Theoretical Cutoff Frequency (7)
 The actual cutoff frequency of the low-pass filter does not match the
 theoretical cutoff frequency of #qty(1.5, "kHz"). This is most likely due to
 the actual values of the components, which do not perfectly match the ideal
 values in the given specification. The formula for the cutoff frequency of a
-second-order low pass filter also confirms this, as shown in @f:clpf
+second-order low pass filter also confirms this, as shown in @f:clpf.
 
 $ f_c = 1/(2pi sqrt(R_1 R_2 C_1 C_2)) approx #qty(1.28, "kHz") $ <f:clpf>
 
 
 
 = Sallen-Key Narrowband Filter
-== (1)
+== Actual Values of the Components (1)
 @t:avnbf shows the actual values of the components used for the Sallen-Key
 narrowband filter.
 
@@ -143,7 +200,7 @@ narrowband filter.
 	caption: "Actual Values of the Narrowband Filter Components"
 ) <t:avnbf>
 
-== (2)
+== Output and Gain at AC (2)
 @t:ognbf shows the output and gain of the narrowband filter on an
 #qty(8, "V")pp sine wave with varying frequencies.
 
@@ -173,16 +230,16 @@ narrowband filter.
 	caption: "Output and Gain of the Low-Pass Filter Circuit"
 ) <t:ognbf>
 
-== (3)
+== Output and Gain at DC (3)
 For a #qty(6, "V")DC input, the output of the narrowband filter is
 approximately #qty(0, "V") (actual measured $V_"out" = #qty(80, "mV")$). This
-happens because of the capacitors' extremely high impedance on DC, which makes
+happens because of the capacitors' extremely high impedance at DC, which makes
 them act like open circuits. As a result, the DC component of the input signal
 is blocked and cannot propagate to the op-amp input. Rather than actual signal
 amplification, the small residual output voltage is caused by non-ideal op-amp
 characteristics like input offset voltage and bias currents.
 
-== (4)
+== Semilog Plot (4)
 @i:mrnbf shows the semilog plot of the magnitude response of the narrowband
 filter circuit.
 
@@ -191,17 +248,15 @@ filter circuit.
 	caption: "Semilog plot of the magnitude response of the narrowband filter circuit."
 ) <i:mrnbf>
 
-== (5)
+== Center and Cutoff Frequencies (5)
 The center frequency of the narrowband filter has been found to be
 #qty(2.15, "kHz"). The low and high cutoff frequencies are #qty(1.97, "kHz")
 and #qty(2.32, "kHz") respectively. These values were found by sweeping the
 frequency with increments of #qty(10, "Hz") above and below #qty(2.2, "kHz")\;
 the cutoff frequencies were found by sweeping until a signal amplitude of
-$#qty(8, "V")/sqrt(2) approx #qty(5.656, "V")$ was yielded.
-
-@i:cfnbf, @i:lcnbf, and @i:hcnbf show the oscilloscope plots of the narrowband
-filter circuit at its center, low cutoff, and high cutoff frequencies
-respectively.
+$#qty(8, "V")/sqrt(2) approx #qty(5.656, "V")$ was yielded. @i:cfnbf, @i:lcnbf,
+and @i:hcnbf show the oscilloscope plots of the narrowband filter circuit at
+its center, low cutoff, and high cutoff frequencies respectively.
 
 #figure(
 	image("assets/center-freq.png"),
@@ -218,7 +273,7 @@ respectively.
 	caption: "Oscilloscope plot of the narrowband filter circuit at its high cutoff frequency."
 ) <i:hcnbf>
 
-== (6)
+== Bandwidth and Q-Factor (6)
 The computations for the bandwidth and Q-factor of the narrowband filter are
 shown in @f:bqnbf.1, @f:bqnbf.2, and @f:bqnbf.3.
 
@@ -226,7 +281,7 @@ $ "BW" = f_h - f_l = #qty(2.32, "kHz") - #qty(1.97, "kHz") = #qty(350, "Hz") $ <
 $ f_0 = sqrt(f_l f_h) = sqrt(#qty(1.97, "kHz") dot #qty(2.32, "kHz")) = #qty(2.137, "kHz") $ <f:bqnbf.2>
 $ Q = f_0/"BW" = #qty(2.137, "kHz")/#qty(350, "Hz") = 6.108 $ <f:bqnbf.3>
 
-== (7)
+== Improving the Q-Factor (7)
 In order to reduce the Q-factor of the narrowband filter, tha bandwidth must be
 increased. This can be accomplished by lowering the circuit's feedback gain. In
 particular, lowering the feedback resistor values or the overall loop gain
