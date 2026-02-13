@@ -20,7 +20,7 @@
 		email: "nile.xavier.jocson@eee.upd.edu.ph"
 	),
 	(
-		name: "Glen Xander Lacuin",
+		name: "Glen Xander O. Lacuin",
 		department: "Electrical and Electronics Engineering Institute",
 		organization: "University of the Philippines Diliman",
 		location: "Quezon City, Philippines",
@@ -70,9 +70,21 @@ Todo
 
 = Comparator
 == (3)
+@i:c1.o and @i:c1.s show the oscilloscope output and an annotated sketch of
+the output of the first comparator circuit.
+
+#figure(
+	image("assets/circuit1-oscilloscope.png"),
+	caption: [Oscilloscope output of the first comparator circuit.]
+) <i:c1.o>
+
+#figure(
+	image("assets/circuit1-sketch.png"),
+	caption: [Annotated sketch of the output of the first comparator circuit.]
+) <i:c1.s>
 
 == (4)
-From the plot above, $max(V_"out") = #qty(3.64, "V")$ and
+From @i:c1.s, $max(V_"out") = #qty(3.64, "V")$ and
 $min(V_"out") = #qty(-5.08, "V")$.
 
 == (5)
@@ -99,6 +111,18 @@ $ V_"out" = cases(
 ) $ <f:c1.b>
 
 == (9)
+@i:c2.o and @i:c2.s show the oscilloscope output and a sketch of the output of
+the second comparator circuit.
+
+#figure(
+	image("assets/circuit2-oscilloscope.png"),
+	caption: [Oscilloscope output of the second comparator circuit.]
+) <i:c2.o>
+
+#figure(
+	image("assets/circuit2-sketch.png"),
+	caption: [Sketch of the output of the second comparator circuit.]
+) <i:c2.s>
 
 == (10)
 As $V_"in"$ is now connected to the inverting input of the op-amp, the behavior
@@ -119,18 +143,108 @@ comparator.
 
 = Schmitt Trigger
 
+== (3)
+@i:c3.o and @i:c3.s show the oscilloscope output and a sketch of the output of
+the first Schmitt trigger circuit.
+
+#figure(
+	image("assets/circuit3-oscilloscope.png"),
+	caption: [Oscilloscope output of the first Schmitt Trigger circuit.]
+) <i:c3.o>
+
+#figure(
+	image("assets/circuit3-sketch.png"),
+	caption: [Sketch of the output of the first Schmitt Trigger circuit.]
+) <i:c3.s>
+
 == (4)
+From @i:c3.s, $max(V_"out") = #qty(3.68, "V")$,
+$min(V_"out") = #qty(-4.32, "V")$, $max(V_"th") = #qty(1.76, "V")$, and
+$min(V_"th") = #qty(-2.16, "V")$.
 
 == (5)
+By voltage division, we have:
+
+$ V_"th" = V_"out" (R_2/(R_1 + R_2)) $ <f:c3.th>
+
+$V_"th"$ is simply $V_"out"$ multiplied by a factor dependent on the given
+resistors.
 
 == (6)
 $V_"out"$ goes high when $V_"in" = #qty(-2.08, "V")$, and goes low when
 $V_"in" = #qty(1.76, "V")$.
 
 == (7)
+Using @f:c3.th and assuming that $V_"out" = V_(s+)$, we can derive the high
+threshold of the Schmitt trigger:
+
+$ V_"th" = V_"HT" = V_(s+) (R_2/(R_1 + R_2)) $
+
+Similarly, we can also derive the low threshold of the Schmitt trigger by
+assuming that $V_"out" = V_(s-)$:
+
+$ V_"th" = V_"LT" = V_(s-) (R_2/(R_1 + R_2)) $
+
+At its core, the Schmitt trigger is simply a comparator circuit with positive
+feedback, enabling hysteresis. Note that this particular Schmitt trigger
+inverts its output as the input is fed through the inverting input of the
+op-amp. The behavior of this circuit is shown in @f:c3.il if
+$V_"out" = V_(s-)$ initially.
+
+$ V_"out" = cases(
+	V_(s+) "if"& V_"in" < V_"LT",
+	V_(s-) "if"& V_"in" > V_"LT"
+) $ <f:c3.il>
+
+Conversely, if $V_"out" = V_(s+)$, the behavior is as follows in @f:c3.ih.
+
+$ V_"out" = cases(
+	V_(s-) "if"& V_"in" > V_"HT",
+	V_(s+) "if"& V_"in" < V_"HT"
+) $ <f:c3.ih>
+
+Simply put, $V_"out"$ stays the same if $V_"in"$ does not pass $V_"LT"$ if
+$V_"out"$ is low, or does not pass $V_"HT"$ if $V_"out"$ is high. Otherwise,
+$V_"out"$ toggles from low to high or vice-versa.
 
 == (8)
+@i:c3.h shows the hysteresis curve of the first Schmitt trigger circuit.
+
+#figure(
+	image("assets/circuit3-hysteresis.png"),
+	caption: [Hysteresis curve of the first Schmitt trigger circuit.]
+) <i:c3.h>
+
+The hysteresis voltage can then be calculated as shown in @f:c3.h.
+
+$ V_H = V_"HT" - V_"LT" = #qty(3.92, "V") $ <f:c3.h>
 
 == (9)
+@i:c4.h shows the hysteresis curve of the second Schmitt trigger circuit, with
+a #qty(1, "V") source added below $R_2$.
+
+#figure(
+	image("assets/circuit4-hysteresis.png"),
+	caption: [Hysteresis curve of the second Schmitt trigger circuit.]
+) <i:c4.h>
+
+We have that $V_H = #qty(3.84, "V")$, which is almost the same as before. The
+only thing that changed is the positive offsetting of $V_"LT"$ and $V_"HT"$.
+
 
 == (10)
+@i:c5.o and @i:c5.s show the oscilloscope output and a sketch of the output of
+the third Schmitt trigger circuit.
+
+#figure(
+	image("assets/circuit5-oscilloscope.png"),
+	caption: [Oscilloscope output of the third Schmitt Trigger circuit.]
+) <i:c5.o>
+
+#figure(
+	image("assets/circuit5-sketch.png"),
+	caption: [Sketch of the output of the third Schmitt Trigger circuit.]
+) <i:c5.s>
+
+By changing $R_2$ into a #qty(5.6, "kO") resistor, both $V_"LT"$ and $V_"HT"$
+were changed, and $V_H$ is now smaller. The output voltage swing is unchanged.
