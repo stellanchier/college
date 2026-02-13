@@ -8,8 +8,7 @@
 	abstract: [
 		This report focuses on the LM741 operational amplifier to characterize,
 		build, and compare a comparator and a Schmitt trigger circuit, and to
-		understand both of their working principles. Some shortcomings of the
-		LM741 are also identified.
+		understand both of their working principles.
 	],
 	authors: (
 	(
@@ -42,7 +41,14 @@
 
 
 = Introduction
-Todo
+This lab report explores the LM741 as the base for a comparator and a Schmitt
+trigger. The comparator section examines how the output switches depending on
+an input sine wave and a reference voltage, which is used in level/threshold
+detection, over/undervoltage protection, zero-crossing detection, and signal
+conversion. The section on the Schmitt trigger introduces positive feedback to
+create hysteresis, and observes how circuit modifications change this
+hysteresis and its thresholds. This is widely used for noise-resistant
+switching, debouncing, cleaning up sensor signals, and waveform shaping.
 
 
 
@@ -196,7 +202,8 @@ $ V_"out" = cases(
 	V_(s-) "if"& V_"in" > V_"LT"
 ) $ <f:c3.il>
 
-Conversely, if $V_"out" = V_(s+)$, the behavior is as follows in @f:c3.ih.
+Conversely, if initially $V_"out" = V_(s+)$, the behavior is as follows in
+@f:c3.ih.
 
 $ V_"out" = cases(
 	V_(s-) "if"& V_"in" > V_"HT",
