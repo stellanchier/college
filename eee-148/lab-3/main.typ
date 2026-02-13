@@ -238,7 +238,6 @@ a #qty(1, "V") source added below $R_2$.
 We have that $V_H = #qty(3.84, "V")$, which is almost the same as before. The
 only thing that changed is the positive offsetting of $V_"LT"$ and $V_"HT"$.
 
-
 == (10)
 @i:c5.o and @i:c5.s show the oscilloscope output and a sketch of the output of
 the third Schmitt trigger circuit.
