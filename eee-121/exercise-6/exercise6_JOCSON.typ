@@ -8,6 +8,7 @@
 #set-num(digits: 2, exponent: "eng")
 
 = EEE 121 Exercise 6
+Nile Jocson, 2024-00045
 
 2026-02-19
 
