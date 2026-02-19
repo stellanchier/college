@@ -175,7 +175,11 @@ matrix is as follows:
 	+ *return* row \* N + col
 ]
 
-Note that this algorithm returns $N^2$ if the value was not found.
+This algorithm basically goes through the first elements of every row except
+the first and checks if it is greater than $x$. If it is, then $x$ may be in
+the last row. Then we go through every column of that row and find $x$. Note
+that this algorithm returns $N^2$ if the $x$ was not found. Because we only
+loop through $N$ without any nested loops, this algorithm is $O(n)$ worst-case.
 
 === b.
 The C++ code with testing is in `exercise6_JOCSON.cpp`.
