@@ -192,6 +192,7 @@ worst-case.
 The algorithm written in C++ is as follows:
 
 ```cpp
+#include <cstddef>
 #include <array>
 
 template<typename T, std::size_t N>

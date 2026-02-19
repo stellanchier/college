@@ -1,6 +1,8 @@
 // 2024-00045
 // exercise6_JOCSON
 
+#include <cstddef>
+
 #include <algorithm>
 #include <array>
 #include <iostream>
