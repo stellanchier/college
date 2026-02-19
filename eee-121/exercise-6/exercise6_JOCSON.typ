@@ -1,9 +1,12 @@
+#import "@preview/codly:1.3.0": codly-init
 #import "@preview/lovelace:0.3.0": pseudocode-list
 #import "@preview/mannot:0.3.1": markhl
 #import "@preview/unify:0.7.1": qty
 #import "@preview/zero:0.6.1": num, set-num
 
 #set text(font: "New Computer Modern")
+
+#show: codly-init.with()
 
 #set-num(digits: 2, exponent: "eng")
 
@@ -183,5 +186,40 @@ Note that this algorithm returns $N^2$ if the $x$ was not found. Because we
 only loop through $N$ without any nested loops, this algorithm is $O(n)$
 worst-case.
 
+#pagebreak()
+
 === b.
-The C++ code with testing is in `exercise6_JOCSON.cpp`.
+The algorithm written in C++ is as follows:
+
+```cpp
+#include <array>
+
+template<typename T, std::size_t N>
+std::size_t find(std::array<std::array<T, N>, N> const &matrix, T const x)
+{
+	std::size_t row = 0;
+	std::size_t col = 0;
+
+	for (; row < N - 1; ++row)
+	{
+		if (matrix[row + 1][0] > x)
+		{
+			break;
+		}
+	}
+
+	if (row == N) { return N * N; }
+
+	for (; col < N; ++col)
+	{
+		if (matrix[row][col] == x)
+		{
+			break;
+		}
+	}
+
+	if (col == N) { return N * N; }
+
+	return row * N + col;
+}
+```
