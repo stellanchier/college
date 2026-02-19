@@ -38,28 +38,32 @@ Dividing two N-digit integers loops through the digits of the dividend and
 repeatedly subtracts the divisor. Since subtraction is $O(n)$, division is then
 $O(n^2)$.
 
+#pagebreak()
+
 
 
 == 3.
 === a.
 For linear time:
 
-$ T_(n)(500) = #qty(0.5, "ms") (500/100) = markhl(#qty(2.5, "ms")) $
+$ T_(n)(500) = #qty(0.5, "ms") (500/100) = #qty(2.5, "ms") $
 
 === b.
 For log-linear time:
 
-$ T_(n log n)(500) = #qty(0.5, "ms") ((500 log 500)/(100 log 100)) approx markhl(#qty(3.37, "ms")) $
+$ T_(n log n)(500) = #qty(0.5, "ms") ((500 log 500)/(100 log 100)) approx #qty(3.37, "ms") $
 
 === c.
 For quadratic time:
 
-$ T_(n^2)(500) = #qty(0.5, "ms") (500^2/100^2) = markhl(#qty(12.5, "ms")) $
+$ T_(n^2)(500) = #qty(0.5, "ms") (500^2/100^2) = #qty(12.5, "ms") $
 
 === d.
 For cubic time:
 
-$ T_(n^3)(500) = #qty(0.5, "ms") (500^3/100^3) = markhl(#qty(62.5, "ms")) $
+$ T_(n^3)(500) = #qty(0.5, "ms") (500^3/100^3) = #qty(62.5, "ms") $
+
+#pagebreak()
 
 
 
@@ -70,7 +74,7 @@ For linear time:
 $
 	1 =& 0.005 (n/100) \
 	200 =& n/100 \
-	markhl(n =& 20000)
+	n =& 20000
 $
 
 === b.
@@ -80,7 +84,7 @@ $
 	1 =& 0.005 ((n log n)/(100 log 100)) \
 	1 =& (n log n)/(20000 log 100) \
 	20000 log 100 =& n log n \
-	markhl(n approx& 10000)
+	n approx& 10000
 $
 
 === c.
@@ -90,7 +94,7 @@ $
 	1 =& 0.005 (n^2/100^2) \
 	200 =& n^2/10000 \
 	2000000 =& n^2 \
-	markhl(n approx& 1414)
+	n approx& 1414
 $
 
 === d.
@@ -100,8 +104,10 @@ $
 	1 =& 0.005 (n^3/100^3) \
 	200 =& n^3/1000000 \
 	200000000 =& n^3 \
-	markhl(n approx& 584)
+	n approx& 584
 $
+
+#pagebreak()
 
 
 
@@ -144,6 +150,8 @@ $ T_B (N) = cases(
 The worst-case is still $N^2$, but it would now be consistently faster than
 program A for all inputs.
 
+#pagebreak()
+
 
 
 == 6.
@@ -158,12 +166,12 @@ matrix is as follows:
 		+ *if* matrix[row + 1][0] > x:
 			+ *break*
 	+ *if* row == N:
-		+ return $"N"^2$
+		+ *return* $"N"^2$
 	+ *for* col in \[0, N):
 		+ *if* matrix[row][col] == x:
 			+ *break*
 	+ *if* col == N:
-		+ return $"N"^2$
+		+ *return* $"N"^2$
 	+ *return* row \* N + col
 ]
 
