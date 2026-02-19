@@ -1,4 +1,4 @@
-#import "@preview/lovelace:0.3.0": *
+#import "@preview/lovelace:0.3.0": pseudocode-list
 #import "@preview/mannot:0.3.1": markhl
 #import "@preview/unify:0.7.1": qty
 #import "@preview/zero:0.6.1": num, set-num
@@ -26,10 +26,17 @@ In increasing order of growth rate:
 
 == 2.
 === a.
+Adding two N-digit integers only loops through both numbers simultaneously
+once, so its Big-O will be $O(n)$.
 
 === b.
+Multiplying two N-digit integers loops through the digits of the second number
+for each digit in the first, therefore its Big-O is $O(n^2)$.
 
 === c.
+Dividing two N-digit integers loops through the digits of the dividend and
+repeatedly subtracts the divisor. Since subtraction is $O(n)$, division is then
+$O(n^2)$.
 
 
 
@@ -129,9 +136,9 @@ Indeed, it is possible, since $T_B (N) = N^2$ is just a worst-case. Consider
 the following:
 
 $ T_B (N) = cases(
-	0   &"if" N = 0,
-	N^2 &"if" N in [2, 100],
-	N   &"if" N > 100
+	0   &"if" N = 1,
+	N^2 &"if" N in [2, 100),
+	N   &"if" N >= 100
 ) $
 
 The worst-case is still $N^2$, but it would now be consistently faster than
@@ -140,3 +147,27 @@ program A for all inputs.
 
 
 == 6.
+=== a.
+My $O(n)$ worst-case algorithm to search for a number in an ascending sorted
+matrix is as follows:
+
+#pseudocode-list[
+	+ row = 0
+	+ col = 0
+	+ *for* row in \[0, N - 1):
+		+ *if* matrix[row + 1][0] > x:
+			+ *break*
+	+ *if* row == N:
+		+ return $"N"^2$
+	+ *for* col in \[0, N):
+		+ *if* matrix[row][col] == x:
+			+ *break*
+	+ *if* col == N:
+		+ return $"N"^2$
+	+ *return* row \* N + col
+]
+
+Note that this algorithm returns $N^2$ if the value was not found.
+
+=== b.
+The C++ code with testing is in `exercise6_JOCSON.cpp`.
