@@ -1,0 +1,23 @@
+sdrg:
+  type: Web
+  title: Ramp Generator
+  author: ScienceDirect
+  url:
+    value: https://www.sciencedirect.com/topics/engineering/ramp-generator
+    date: 2026-02-24
+
+etrc:
+  type: Web
+  title: RC Charging Circuit
+  author: ElectronicsTutorials
+  url:
+    value: https://www.electronics-tutorials.ws/rc/rc_1.html
+    date: 2026-02-24
+
+lt555:
+  type: Web
+  title: 555 Ramp Generator
+  author: Workforce LibreTexts
+  url:
+    value: https://workforce.libretexts.org/Bookshelves/Electronics_Technology/Electric_Circuits_VI_-_Experiments_(Kuphaldt)/06:_Analog_Integrated_Circuits/6.08:_555_Ramp_Generator
+    date: 2026-02-24
