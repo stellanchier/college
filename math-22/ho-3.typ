@@ -19,7 +19,8 @@ are both positive for all $n >= 1$. We then have:
 
 $ a_(n + 1)/a_n = 5^(n + 1)/(n + 1)! dot n!/5^n = 5/(n + 1) $
 
-Since $a_(n + 1)/a_n <= 1$ for all $n >= 4$, the sequence ultimately decreases.
+Since $a_(n + 1)/a_n <= 1$ for all $n >= 4$, $a_n$ ultimately decreases at
+$n >= 4$.
 
 #align(right, $qed$)
 
